@@ -3,7 +3,6 @@ import './QuoteBox.css'
 import Quote from './Quote'
 import Author from './Author'
 import { faRetweet } from "@fortawesome/free-solid-svg-icons"
-import { faShare} from "@fortawesome/free-solid-svg-icons"
 import { faTwitter  } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import getRandomQuote from '../logic/RandomQuote'
@@ -37,7 +36,6 @@ class QuoteBox extends Component {
         super(props)
 
         
-        const{content, author} =  getRandomQuote()
         
         this.state = {quote:null, author:null, color:colors[0]} // Set initial state
 
@@ -74,8 +72,6 @@ class QuoteBox extends Component {
 
    async generateNewQuote(){
         
-        var randColorIdx;
-
         await this.handleQuote();
 
        
