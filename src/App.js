@@ -8,6 +8,7 @@ function App() {
     <div>
       <Helmet>
         <title>Random Quotes!</title>
+        <meta name="description" content="Random Quotes!"></meta>
       </Helmet>
       <QuoteBox/>
     </div>
