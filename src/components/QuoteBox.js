@@ -4,9 +4,10 @@ import Quote from './Quote'
 import Author from './Author'
 import { faRetweet } from "@fortawesome/free-solid-svg-icons"
 import { faTwitter  } from "@fortawesome/free-brands-svg-icons"
+import { faGithub} from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import getRandomQuote from '../logic/RandomQuote'
-import createAndOpenTweet from '../logic/TweetURLBuilder'
+import {createAndOpenTweet, openGitHubPage} from '../logic/URLTools'
 
 
 const colors = [ "#3b5998",
@@ -93,7 +94,8 @@ class QuoteBox extends Component {
                         <Author name={this.state.author} color={this.state.color}/>
                         <div className="button-box">
                             <button id="newQuoteBtn"className="action-button" onClick={this.generateNewQuote} style={{color:this.state.color}}><FontAwesomeIcon icon={faRetweet}/></button>
-                            <button id="shareBtn" className="action-button" style={{color:this.state.color}}onClick={() => createAndOpenTweet(this.state.quote, this.state.author)}><FontAwesomeIcon icon={faTwitter}/></button>
+                            <button id="tweetBtn" className="action-button" style={{color:this.state.color}}onClick={() => createAndOpenTweet(this.state.quote, this.state.author)}><FontAwesomeIcon icon={faTwitter}/></button>
+                            <button id="githubBtn" className="action-button" style={{color:this.state.color}}onClick={() => openGitHubPage()}><FontAwesomeIcon icon={faGithub}/></button>
                         </div>
                     </div>
                 </div>
